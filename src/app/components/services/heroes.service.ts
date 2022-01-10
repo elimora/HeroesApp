@@ -58,7 +58,7 @@ export class HeroesService{
       ];
 
     constructor(){
-        console.log('Servicio listo para usarse')
+        //console.log('Servicio listo para usarse')
     }
 
     getHeroes(){
@@ -67,6 +67,25 @@ export class HeroesService{
 
     getHeroe(id:number){
         return this.heroes[id]; 
+    }
+
+    buscarHeore(termino:string):Heroes[]{
+
+      let heroesArr:Heroes[]=[]; 
+
+      termino=termino.toLocaleLowerCase(); 
+
+      for (let heroe of this.heroes) {
+        
+        let nombre=heroe.nombre.toLocaleLowerCase(); 
+
+        if (nombre.indexOf(termino)>=0) {
+          
+          heroesArr.push(heroe)
+        }
+      }
+
+      return heroesArr; 
     }
 }
 
