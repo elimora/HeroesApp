@@ -9,14 +9,17 @@ import { HeroesService } from '../services/heroes.service';
 })
 export class HeroeComponent implements OnInit {
 
-  heroe:any={};  
+  heroe:any={};
+  heroeCasa:string=''  
 
   constructor(private activatedRoute:ActivatedRoute, 
               private heroServive:HeroesService ) {
 
     this.activatedRoute.params.subscribe(params=>{ 
     this.heroe=this. heroServive.getHeroe(params['id']); 
-    console.log(this.heroe)  
+    console.log(this.heroe); 
+    this.heroeCasa=this.heroe.casa
+    console.log(this.heroeCasa)
   })
    
   }
@@ -26,5 +29,7 @@ export class HeroeComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+ 
 
 }
