@@ -2,25 +2,27 @@
 
 <hr>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col animated fadeIn fast" *ngFor="let heroe of heroes ; let i=index">
-        <div class="card h-100">
-            <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-            <div class="card-body">
-                <h5 class="card-title">{{heroe.nombre}}</h5>
-                <p class="card-text">{{heroe.bio}}</p>
+
+<div class="row">
+    <div class="col-sm-5" *ngFor="let heroe of heroes; let i =index">
+        <app-heroe-tarjeta [heroe]="heroe" [i]="i"></app-heroe-tarjeta>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-sm-6" *ngFor="let hereo of heroes; let i =index">
+        <div class="card">
+            <img class="card-img-top" [src]="hereo.img" alt="Card image cap">
+            <div class="card-block">
+                <h5 class="card-title">{{hereo.nombre}}</h5>
+                <p class="card-text">{{hereo.bio}}</p>
 
             </div>
-            <div class="card-footer">
-                <small class="text-muted">{{heroe.aparicion}}</small>
-            </div>
-            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-
-            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+            <button (click)=" verHeroe(i)" class="btn btn-outline-primary">
+                ver mas..
+            </button>
         </div>
     </div>
 
-
-
-
-</div>
+</div> -->

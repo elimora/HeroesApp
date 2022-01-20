@@ -3,7 +3,7 @@
 
 <hr>
 
-<div class="row animated fadeIn fast" *ngIf="heroeEncontrado.length==0">
+<div class="row animated fadeIn fast" *ngIf="heroes.length==0">
     <div class="col-md-12">
         <div class="alert alert-info">
             No existen resultados con el termino: {{termino}}
@@ -12,6 +12,18 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col animated fadeIn fast" *ngFor="let heroe of heroes ; let i=index">
+        <app-heroe-tarjeta [heroe]="heroe" [i]="i"></app-heroe-tarjeta>
+    </div>
+
+
+</div>
+
+
+
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+
     <div class="col animated fadeIn fast" *ngFor="let heroe of heroeEncontrado ; let i=index">
         <div class="card h-100">
             <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
@@ -25,6 +37,9 @@
             </div>
             <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
 
-            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+           
         </div>
     </div>
+
+
+</div> -->
