@@ -4,6 +4,7 @@ export interface Heroes {
         bio: string,
         img: string,
         aparicion: string,
-        casa:string
+        casa:string, 
+        idx?:number
       
 }

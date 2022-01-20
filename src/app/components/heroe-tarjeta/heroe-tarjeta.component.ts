@@ -12,16 +12,17 @@ export class HeroeTarjetaComponent implements OnInit {
 
   
   @Input() heroe:any={}; 
-  @Input() i!:number
+  @Input() idx!:number
 
   constructor( private heroesService:HeroesService, private router:Router) { }
 
   ngOnInit(): void {
-    
+    //console.log(this.idx); 
+    console.log(this.heroe.idx)
   }
 
 
-  verHeroe(i:number){
-    this.router.navigate(['/heroe',this.i])
+  verHeroe(){
+    this.router.navigate(['/heroe',this.heroe.idx])
   }
 }

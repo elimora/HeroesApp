@@ -12,7 +12,8 @@ export class SearchComponent implements OnInit {
 
   @Input() heroes:Heroes[]=[]; 
   @Input() termino:string=""
-
+  @Input() id!:number
+  
   constructor(private activateRoute:ActivatedRoute, 
               private heroeService:HeroesService, 
               private router:Router) { }
@@ -21,12 +22,13 @@ export class SearchComponent implements OnInit {
 
     this.activateRoute.params.subscribe(params=>{
       this.heroes=this.heroeService.buscarHeore(params['termino']); 
-      this.termino=params['termino']
+      this.termino=params['termino']; 
+      console.log(this.heroes)
     })
   }
 
-  verHeroe(idx:number){
-    this.router.navigate(['/heroe',idx])
+  verHeroe(){
+    this.router.navigate(['/heroe',this.id])
    
   }
 }
